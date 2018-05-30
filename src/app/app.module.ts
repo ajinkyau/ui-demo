@@ -9,7 +9,7 @@ import { QuotesService } from './services/quotes-service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { TopicPipe } from './utils/topic-pipe';
+import { TopicPipe } from './pipes/topic-pipe';
 import { AuthorComponent } from './author/author.component';
 import { AuthorResolver } from './services/author-resolver.service';
 
