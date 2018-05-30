@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="card" *ngFor="let quote of quotes | async">
+    <img src="../../assets/img.jpg" alt="{{quote.quote}}" style="width: 100%;">
+    <div class="card-container">
+      <p class="card-container--data card-container--quote" title="View Quote">
+        {{quote.quote}}
+      </p>
+      <p class="card-container--data card-container--author" title="View Author Details" [routerLink]="['../author', quote.author.id]">
+        {{quote.author.name}}
+      </p>
+    </div>
+    <div class="card-topics">
+      <a *ngFor="let topic of quote.topics; let i = index;" target="_blank" href="https://www.brainyquotes.com/topics/{{topic}}">
+        {{topic | topic: i : quote.topics}}
+      </a>
+    </div>
+    <div class="block">
+      <div class="left">
+          <a href="#">
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+              <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+          </a>
+      </div>
+      <div class="right">
+        <a href="#">
+          <i class="fa fa-heart-o"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-plus-square-o"></i>
+        </a>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
