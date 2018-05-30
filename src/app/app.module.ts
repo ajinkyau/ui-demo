@@ -13,7 +13,7 @@ import { TopicPipe } from './pipes/topic-pipe';
 import { AuthorComponent } from './author/author.component';
 import { AuthorResolver } from './services/author-resolver.service';
 
-export function init_app(quotesService: QuotesService) {
+export function init(quotesService: QuotesService) {
   return () => quotesService.getQuotes();
 }
 
@@ -33,7 +33,7 @@ export function init_app(quotesService: QuotesService) {
   providers: [ 
     QuotesService,
     AuthorResolver,
-    { provide: APP_INITIALIZER, useFactory: init_app, deps: [QuotesService], multi: true }
+    { provide: APP_INITIALIZER, useFactory: init, deps: [QuotesService], multi: true }
   ],
   bootstrap: [AppComponent]
 })
